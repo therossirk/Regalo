@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi amigo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PANTALLA 1: Contraseña -->
+    <div id="pantalla-login" class="pantalla">
+        <h1>🎂 ¡Bienvenido!</h1>
+        <p>Introduce tu fecha de cumpleaños para entrar</p>
+        <input type="text" id="clave" placeholder="Dia y Mes" maxlength="4">
+        <button onclick="entrar()">Entrar</button>
+        <p id="error" class="error"></p>
+    </div>
+
+    <!-- PANTALLA 2: Menú -->
+    <div id="pantalla-menu" class="pantalla oculto">
+        <h1>🎉 ¡Feliz cumpleaños!</h1>
+        <p>Elige una opción</p>
+        <div class="botones">
+            <button class="boton carta" onclick="mostrar('carta')">💌<br>Carta</button>
+            <button class="boton regalo" onclick="mostrar('regalo')">🎁<br>Regalo</button>
+            <button class="boton fotos" onclick="mostrar('fotos')">🖼️<br>Fotos</button>
+        </div>
+    </div>
+
+    <!-- PANTALLA 3: Carta -->
+    <div id="pantalla-carta" class="pantalla oculto">
+        <h2>💌 Mi cartita</h2>
+        <div class="carta-texto">
+            <p>Querido Carlos,</p>
+            <p>Hoy cumples 20 años y quería decirte algo importante: gracias por estar siempre ahí. Por las risas, los malos momentos que se volvieron buenos, y por ser la persona en la que siempre puedo confiar.</p>
+            <p> Me acuerdo de cuando intenté yk y no parabamos de hacer llamada porque no me encontraba bien. Y tú siempre decias que sí, estabas a mi lado y te lo agradezco un montón</p>
+            <p>Este pequeño regalo hecho a mano es lo que puedo darte hoy, pero lo que siento por ti no cabe en ningún regalo. No lo digo mucho pero te quiero.</p>
+            <p>¡Feliz cumpleaños! 🎂</p>
+            <p>Con cariño, tu amigo.</p>
+        </div>
+        <button class="volver" onclick="mostrar('menu')">← Volver</button>
+    </div>
+
+    <!-- PANTALLA 4: Regalo -->
+    <div id="pantalla-regalo" class="pantalla oculto">
+        <h2>🎁 Tu regalo</h2>
+        <p class="frase">No he podido comprarte nada por el momento, pero elige tú tu regalo 😉</p>
+        <div class="opciones">
+            <button onclick="elegir('camiseta')">👕 Camiseta</button>
+            <button onclick="elegir('material')">📚 Material escolar</button>
+            <button onclick="elegir('otro')">✍️ Otra cosa</button>
+        </div>
+        <p id="resultado" class="oculto"></p>
+        <textarea id="texto-libre" class="oculto" placeholder="Escribe aquí lo que quieras..."></textarea>
+        <button id="btn-enviar" class="oculto" onclick="enviar()">Enviar</button>
+        <button class="volver" onclick="mostrar('menu')">← Volver</button>
+    </div>
+
+    <!-- PANTALLA 5: Fotos -->
+    <div id="pantalla-fotos" class="pantalla oculto">
+        <h2>🖼️ Nuestras pocas fotos :/ </h2>
+        <div class="marco">
+            <img src="foto1.jpg" alt="Foto 1">
+            <img src="foto2.jpg" alt="Foto 2">
+            <img src="foto3.jpg" alt="Foto 3">
+            <img src="foto4.jpg" alt="Foto 4">
+            <img src="foto5.jpg" alt="Foto 5">
+            
+        </div>
+        <p class="frase">Espero tener muchas más fotos contigo 💙</p>
+        <button class="volver" onclick="mostrar('menu')">← Volver</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
